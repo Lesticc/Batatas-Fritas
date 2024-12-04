@@ -512,6 +512,9 @@ public class Batatafrita{
                 }
             }
             System.out.println(vars.carregado);
+            if(vars.JVM_lang==true){
+                traduzir_brus();
+            }
         } catch (IOException e) {
             System.out.println(vars.erro + vars.n + e);
         }

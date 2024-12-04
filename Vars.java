@@ -45,7 +45,7 @@ public class Vars {
     public String variavel_true_br =  "Varíavel alterada para verdadeira.";
     public String variavel_false_br = "Variável alterada para falsa.";
     public String dica_console_br =   "Digite \"help\" para obter os comandos.\nDigite \"break\" para fechar o console.";
-    public String help_console_br =   "Varíaveis:\njvm_cheats      var_potatosperwork\njvm_debug       var_moneyperwork\njvm_lang        var_pricepotato\nvar_money       jvm_infinitepotato\nvar_batatas     jvm_infinitemoney\n\nComandos:\nhelp            language\nbreak           vars";
+    public String help_console_br =   "Varíaveis:\njvm_cheats      var_potatosperwork\njvm_debug       var_moneyperwork\njvm_lang        var_pricepotato\nvar_money       jvm_infinitepotato\nvar_batatas     jvm_infinitemoney\n\nComandos:\nhelp            language\nbreak           vars\nload            save";
     public String require_jvmcheats_br = "Você precisa que jvm_cheats esteja em true(1).";
     public String newvalue_br =       "Qual será o novo valor?";
     public String language_br =       "A linguagem está definida em: Português(BR)!";
@@ -108,7 +108,7 @@ public class Vars {
     public String variavel_true_us =  "Variable changed to true.";
     public String variavel_false_us = "Variable changed to false.";
     public String dica_console_us =   "Enter \"help\" to get the commands.\nEnter \"break\" to close the console.";
-    public String help_console_us =   "Variables:\njvm_cheats      var_potatosperwork\njvm_debug       var_moneyperwork\njvm_lang        var_pricepotato\nvar_money       jvm_infinitepotato\nvar_batatas     jvm_infinitemoney\n\nCommands:\nhelp            language\nbreak           vars";  
+    public String help_console_us =   "Variables:\njvm_cheats      var_potatosperwork\njvm_debug       var_moneyperwork\njvm_lang        var_pricepotato\nvar_money       jvm_infinitepotato\nvar_batatas     jvm_infinitemoney\n\nCommands:\nhelp            language\nbreak           vars\nload            save";  
     public String require_jvmcheats_us = "It requires that jvm_cheats be true(1).";
     public String newvalue_us =       "What will the new value be?";
     public String language_us =       "The language is set to: English (US)!";
@@ -116,7 +116,7 @@ public class Vars {
 
     public String entrando_us =      "Joining!";
     public String saindo_us =        "Leaving!";
-    public String console_us =       "Welcome! 0- Leave || 1- Join || 2- Console";
+    public String console_us =       "Welcome! 0- Leave || 1- Join || 2- Console || 3- Achievements";
     public String escolher_modo_us = "Choose your gamemode!\n====================================================\n0- Console\n1- Work\n2- Buy french fries";
     public String erro_us =          "An error occurred! Exit code: ";
     public String indisponivel_us =  "This function is unavailable, please try again";
@@ -252,6 +252,8 @@ public class Vars {
         String v = l ? "true" : "verdadeiro";
         String f = l ? "false" : "falso";
 
+        String a = " ";
+
         String u1f = "              ||   ";
         String u2f =   "            ||   ";
         String u3f =   "            ||   ";
@@ -264,6 +266,14 @@ public class Vars {
         String u4v = "   ||   ";
         String u5v = " ||";
 
+        String u1f2 = "          ||   ";
+        String u2f2 = u4f;
+        String u3f2 = "      ||";
+
+        String u1v2 = a + u1f2;
+        String u2v2 = a + u2f2;
+        String u3v2 = a + u3f2;
+
         String v1 = (l ? conq_titl_01_us : conq_titl_01_br) + "\b: " + (V1 ? v : f);
         String v2 = (l ? conq_titl_02_us : conq_titl_02_br) + "\b: " + (V2 ? v : f);
         String v3 = (l ? conq_titl_03_us : conq_titl_03_br) + "\b: " + (V3 ? v : f);
@@ -274,7 +284,7 @@ public class Vars {
         String v8 = (l ? conq_titl_08_us : conq_titl_08_br) + "\b: " + (V8 ? v : f);
         String v9 = (l ? conq_titl_09_us : conq_titl_09_br) + "\b: " + (V9 ? v : f);
 
-        return(v1 + (V1 ? u1v : u1f) + v2 + n /**/ + v3 + (V3 ? u2v : u2f) + v4 + n /**/+ v5 + (V5 ? u2v : u3f) + v6 + n /**/+ v7 + (V7 ? u4v : u4f) + v8 + n /**/+ v9 + (V9 ? u5v : u5f));
+        return(l ? (v1 + (V1 ? u1v2 : u1f2) + v2 + n /**/ + v3 + (V3 ? u2v2 : u2f2) + v4 + n /**/ + v5 + (V5 ? u2v2 : u2f2) + v6 + n + /**/ v7 + (V7? u2v2 : u2f2) + v8 + n /* */ + v9 + (V9? u3v2 : u3f2)) : (v1 + (V1 ? u1v : u1f) + v2 + n /**/ + v3 + (V3 ? u2v : u2f) + v4 + n /**/+ v5 + (V5 ? u2v : u3f) + v6 + n /**/+ v7 + (V7 ? u4v : u4f) + v8 + n /**/+ v9 + (V9 ? u5v : u5f)));
     
         /*
         10 batatas feitas: verdadeiro         ||   100 batatas feitas: falso
@@ -283,5 +293,15 @@ public class Vars {
         $10 de dinheiro obtidos: verdadeiro   ||   $100 de dinheiro obtidos: falso
         $1000 de dinheiro obtidos: verdadeiro || 
         */
+
+        /*
+         ===================================================================
+        10 potatos fryied: false          ||   100 potatos fryied: false
+        1000 potatos fryied: false        ||   10 potatos ordered: false
+        100 potatos ordered: false        ||   1000 potatos ordered: false
+        $10 dolars obtained: false        ||   $100 dolars obtained: false
+        $1000 dolars obtained: false      ||
+        ===================================================================
+         */
     }
 }

@@ -1,6 +1,6 @@
 > #
 > # Jogo-Java: Batata frita
-> Feito por **<a href="lestic.com.br/aboutme.html">Lestic</a>**
+> Feito por **<a href="https://www.lestic.com.br/aboutme.html">Lestic</a>**
 > - Como o próprio nome já diz, esse é um jogo de fazer e comprar batatas fritas. O diferencial dele é que contém sistemas de console e até save!
 > #
 > - Como rodar:

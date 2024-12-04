@@ -1,0 +1,2 @@
+String input = "1";
+int output = Integer.parseInt(input);

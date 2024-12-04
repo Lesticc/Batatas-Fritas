@@ -1,0 +1,13 @@
+import java.util.Date;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+
+Date data = new Date();
+
+DateFormat dateFormat = new SimpleDateFormat("dd/MM/yy");
+DateFormat hourFormat = new SimpleDateFormat("HH:mm:ss");
+
+================================================================
+-- Date: Forma a data 
+-- DateFormat: Ajudar a formatar a data
+-- SimpleDateFormat: Formata a data
